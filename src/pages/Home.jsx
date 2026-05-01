@@ -13,7 +13,7 @@ export default function Home() {
   const stats = [
     { val: '8+', label: 'Projects Built' },
     { val: '100%', label: 'Student Friendly' },
-    { val: '₹3K', label: 'Starting Price' },
+    { val: '₹599', label: 'Starting Price' },
     { val: '48hr', label: 'Avg Delivery' },
   ];
 
