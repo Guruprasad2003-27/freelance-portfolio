@@ -3,13 +3,13 @@ import { getProjects, createProject } from '../api';
 import ProjectCard from '../components/ProjectCard';
 
 const defaultProjects = [
-  { id: 'student-attendance-system', name: 'Student-Attendance-System', category: 'Web App' },
-  { id: 'resume-analyzer-web-app', name: 'Resume Analyzer Web App', category: 'AI/ML' },
-  { id: 'expense-tracker', name: 'Expense Tracker', category: 'Web App' },
-  { id: 'emotion-detection', name: 'Emotion Detection', category: 'AI/ML' },
-  { id: 'whatsapp-web-clone', name: 'Whatsapp Web Clone', category: 'Web App' },
-  { id: 'qr-attendance', name: 'QR Attendance', category: 'Web App' },
-  { id: 'ai-student-result-analyzer', name: 'AI Student Result Analyzer', category: 'AI/ML' }
+  { id: 1, title: 'Student Attendance System', category: 'Web App', description: 'Digital attendance management for schools and colleges.', tech: ['Python', 'Django', 'MySQL'], features: ['Role-based login', 'Reports', 'Export Excel'], price: { basic: 3000, standard: 6000, premium: 10000 }, icon: '📋', color: '#4F46E5' },
+  { id: 2, title: 'Resume Analyzer Web App', category: 'AI/ML', description: 'AI-powered resume analyzer with ATS score and keyword suggestions.', tech: ['Python', 'NLP', 'Streamlit'], features: ['PDF upload', 'ATS score', 'Skill gap'], price: { basic: 4000, standard: 7000, premium: 12000 }, icon: '📄', color: '#0891B2' },
+  { id: 3, title: 'Expense Tracker', category: 'Web App', description: 'Personal finance tracker with budgeting and visual charts.', tech: ['React', 'Node.js', 'MongoDB'], features: ['Budget planning', 'Charts', 'Reports'], price: { basic: 2500, standard: 5000, premium: 8000 }, icon: '💰', color: '#059669' },
+  { id: 4, title: 'Emotion Detection', category: 'AI/ML', description: 'Real-time emotion detection using deep learning and webcam.', tech: ['Python', 'TensorFlow', 'OpenCV'], features: ['7 emotions', 'Real-time', 'REST API'], price: { basic: 5000, standard: 10000, premium: 18000 }, icon: '😊', color: '#DC2626' },
+  { id: 5, title: 'WhatsApp Web Clone', category: 'Web App', description: 'Full-featured WhatsApp clone with real-time messaging.', tech: ['React', 'Socket.io', 'MongoDB'], features: ['Real-time chat', 'Groups', 'Media sharing'], price: { basic: 6000, standard: 12000, premium: 20000 }, icon: '💬', color: '#16A34A' },
+  { id: 6, title: 'QR Attendance', category: 'Web App', description: 'Dynamic QR code attendance system with anti-proxy protection.', tech: ['Python', 'Django', 'QRCode'], features: ['Dynamic QR', 'Anti-proxy', 'Live dashboard'], price: { basic: 3500, standard: 7000, premium: 11000 }, icon: '📱', color: '#B45309' },
+  { id: 7, title: 'AI Student Result Analyzer', category: 'AI/ML', description: 'ML-powered result analysis with performance prediction.', tech: ['Python', 'Scikit-learn', 'Streamlit'], features: ['Prediction', 'Weak areas', 'Study tips'], price: { basic: 4500, standard: 8000, premium: 14000 }, icon: '📊', color: '#9333EA' },
 ];
 
 export default function Projects() {
