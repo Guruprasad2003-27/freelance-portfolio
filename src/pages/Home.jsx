@@ -54,7 +54,7 @@ export default function Home() {
             <Link to="/projects" className="btn-primary" style={{ fontSize: 16, padding: '14px 32px' }}>
               Browse Projects →
             </Link>
-            <a href="https://wa.me/9197530021461?text=Hi!%20I%20want%20to%20discuss%20a%20project"
+            <a href="https://wa.me/917530021461?text=Hi!%20I%20want%20to%20discuss%20a%20project"
               target="_blank" rel="noopener noreferrer"
               style={{
                 background: '#25D366', color: '#fff', padding: '14px 32px',
