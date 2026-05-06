@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getProjects } from '../api';
 import axios from 'axios';
 
-const ADMIN_PASSWORD = 'guru2024admin';  // CHANGE THIS TO YOUR OWN PASSWORD OR SET VIA ENV
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'guru@admin#2026';  // CHANGE THIS TO YOUR OWN PASSWORD OR SET VIA ENV
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const emptyForm = {
