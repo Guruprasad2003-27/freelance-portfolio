@@ -1,10 +1,9 @@
 import { useState } from 'react';
-
+import upiqr from './public/upi-qr.png';
 // ✅ REPLACE THESE WITH YOUR REAL DETAILS
 const UPI_ID = 'guruprasadsenthilkumar@okhdfcbank';
 const UPI_NAME = 'Guruprasad K S';         // Your name as in UPI
-const UPI_QR_IMAGE = '/upi-qr.png';   // Put your QR image in frontend/public/upi-qr.png
-
+const UPI_QR_IMAGE = upiqr;
 const projectOptions = [
   'Student Attendance System',
   'Resume Analyzer Web App',
