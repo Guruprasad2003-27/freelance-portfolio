@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import upiqr from './public/upi-qr.png';
+import upiqr from '../public/upi-qr.png';
 // ✅ REPLACE THESE WITH YOUR REAL DETAILS
 const UPI_ID = 'guruprasadsenthilkumar@okhdfcbank';
 const UPI_NAME = 'Guruprasad K S';         // Your name as in UPI
