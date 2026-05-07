@@ -59,7 +59,7 @@ export default function Pay() {
 
     // Auto open WhatsApp after 1 second
     setTimeout(() => {
-      window.open('https://wa.me/919XXXXXXXXX?text=' + waMsg, '_blank');
+      window.open('https://wa.me/917530021461?text=' + waMsg, '_blank');
     }, 1000);
   };
 
@@ -78,7 +78,7 @@ export default function Pay() {
             WhatsApp is opening — please send a screenshot of your payment there too.
           </p>
           <a
-            href={'https://wa.me/919XXXXXXXXX?text=' + encodeURIComponent(
+            href={'https://wa.me/917530021461?text=' + encodeURIComponent(
               'Hi! I paid Rs.' + form.amount + ' for ' + form.projectType + '. Txn ID: ' + form.txnId
             )}
             target="_blank"
