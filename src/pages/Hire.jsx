@@ -132,7 +132,7 @@ export default function Hire() {
                   style={{ flex: 1, justifyContent: 'center', fontSize: 15, padding: '14px 24px' }}>
                   {status === 'loading' ? 'Submitting...' : '🚀 Submit Request'}
                 </button>
-                <a href={'https://wa.me/916382788045?text=' + encodeURIComponent('Hi! I want to discuss a project.')}
+                <a href={'https://wa.me/917530021461?text=' + encodeURIComponent('Hi! I want to discuss a project.')}
                   target="_blank" rel="noopener noreferrer"
                   style={{
                     flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,

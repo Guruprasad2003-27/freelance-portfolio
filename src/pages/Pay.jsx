@@ -39,7 +39,7 @@ export default function Pay() {
     setLoading(false);
     setSubmitted(true);
     const waMsg = encodeURIComponent('Hi! I paid Rs.' + form.amount + ' for ' + form.projectType + '. Txn ID: ' + form.txnId);
-    setTimeout(() => window.open('https://wa.me/916382788045?text=' + waMsg, '_blank'), 1000);
+    setTimeout(() => window.open('https://wa.me/917530021461?text=' + waMsg, '_blank'), 1000);
   };
 
   if (submitted) return (
@@ -51,7 +51,7 @@ export default function Pay() {
           Thank you, <strong style={{ color: 'var(--text)' }}>{form.name}</strong>!
           WhatsApp is opening — send a screenshot of your payment there too.
         </p>
-        <a href={'https://wa.me/916382788045?text=' + encodeURIComponent('Hi! I paid Rs.' + form.amount + ' for ' + form.projectType + '. Txn ID: ' + form.txnId)}
+        <a href={'https://wa.me/917530021461?text=' + encodeURIComponent('Hi! I paid Rs.' + form.amount + ' for ' + form.projectType + '. Txn ID: ' + form.txnId)}
           target="_blank" rel="noopener noreferrer"
           style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#25D366', color: '#fff', padding: '14px 28px', borderRadius: 10, fontSize: 16, fontWeight: 700 }}>
           💬 Open WhatsApp

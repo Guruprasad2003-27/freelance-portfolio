@@ -55,7 +55,7 @@ export default function Footer() {
 
           <div>
             <div style={{ fontWeight: 600, marginBottom: 16 }}>Contact</div>
-            <a href="https://wa.me/916382788045" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/917530021461" target="_blank" rel="noopener noreferrer"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 background: '#25D36622', color: '#25D366', padding: '10px 18px',
