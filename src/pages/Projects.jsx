@@ -22,14 +22,17 @@ export default function Projects() {
   const isHost = localStorage.getItem('role') === 'host';
 
   useEffect(() => {
-    getProjects()
-      .then(r => {
-        const dbProjects = Array.isArray(r.data) ? r.data : [];
-        setProjects(dbProjects.length ? dbProjects : defaultProjects);
-      })
-      .catch(() => setProjects(defaultProjects))
-      .finally(() => setLoading(false));
-  }, []);
+  getProjects()
+    .then(r => {
+      const dbProjects = Array.isArray(r.data) ? r.data : [];
+      // Merge: show defaults + any extra projects added from admin
+      const defaultIds = defaultProjects.map(p => p.title);
+      const extraProjects = dbProjects.filter(p => !defaultIds.includes(p.title));
+      setProjects([...defaultProjects, ...extraProjects]);
+    })
+    .catch(() => setProjects(defaultProjects))
+    .finally(() => setLoading(false));
+}, []);
 
   const categories = ['All', 'Web App', 'AI/ML'];
   const filtered = filter === 'All' ? projects : projects.filter(p => p.category === filter);
