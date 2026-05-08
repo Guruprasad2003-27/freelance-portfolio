@@ -1,28 +1,48 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { getProject } from '../api';
 
 const allProjects = [
   { id: 1, title: 'Student Attendance System', category: 'Web App', description: 'Digital attendance management for schools and colleges. Mark, track, and generate reports with role-based access for admin and teachers.', tech: ['Python', 'Django', 'MySQL'], features: ['Role-based login', 'Attendance reports', 'Student dashboard', 'Export to Excel'], price: { basic: 999, standard: 1500, premium: 3500 }, icon: '📋', color: '#4F46E5' },
   { id: 2, title: 'Resume Analyzer Web App', category: 'AI/ML', description: 'AI-powered tool that analyzes resumes and gives job match scores, keyword suggestions, and improvement tips.', tech: ['Python', 'NLP', 'Streamlit', 'PyPDF2'], features: ['PDF upload', 'ATS score', 'Keyword analysis', 'Skill gap detection'], price: { basic: 999, standard: 1500, premium: 2500 }, icon: '📄', color: '#0891B2' },
   { id: 3, title: 'Expense Tracker', category: 'Web App', description: 'Personal finance tracker with monthly budgeting, category-wise spending charts, and savings suggestions.', tech: ['React', 'Node.js', 'MongoDB', 'Chart.js'], features: ['Budget planning', 'Visual charts', 'Category tracking', 'Monthly reports'], price: { basic: 599, standard: 1500, premium: 2500 }, icon: '💰', color: '#059669' },
-  { id: 4, title: 'Emotion Detection', category: 'AI/ML', description: 'Real-time emotion detection system using deep learning that identifies human emotions from webcam feed.', tech: ['Python', 'TensorFlow', 'OpenCV', 'Flask'], features: ['7 emotion classes', 'Real-time detection', 'Engagement analytics', 'REST API'], price: { basic: 1500, standard: 3000, premium: 6000 }, icon: '😊', color: '#DC2626' },
+  { id: 4, title: 'Emotion Detection', category: 'AI/ML', description: 'Real-time emotion detection using deep learning that identifies human emotions from webcam feed.', tech: ['Python', 'TensorFlow', 'OpenCV', 'Flask'], features: ['7 emotion classes', 'Real-time detection', 'Engagement analytics', 'REST API'], price: { basic: 1500, standard: 3000, premium: 6000 }, icon: '😊', color: '#DC2626' },
   { id: 5, title: 'WhatsApp Web Clone', category: 'Web App', description: 'Full-featured WhatsApp web clone with real-time messaging, group chats, image sharing, and online status.', tech: ['React', 'Node.js', 'Socket.io', 'MongoDB'], features: ['Real-time chat', 'Group messages', 'Image sharing', 'Online status'], price: { basic: 1200, standard: 1700, premium: 2500 }, icon: '💬', color: '#16A34A' },
-  { id: 6, title: 'QR Attendance', category: 'Web App', description: 'Dynamic QR code-based attendance system. New QR every session prevents proxy attendance with live dashboard.', tech: ['Python', 'Django', 'QRCode', 'Bootstrap'], features: ['Dynamic QR codes', 'Anti-proxy system', 'Live dashboard', 'Location tracking'], price: { basic: 999, standard: 1500, premium: 2000 }, icon: '📱', color: '#B45309' },
-  { id: 7, title: 'AI Student Result Analyzer', category: 'AI/ML', description: 'Smart result analysis tool that predicts student performance and gives personalized study suggestions using ML.', tech: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'], features: ['Performance prediction', 'Weak area detection', 'Study suggestions', 'Visual reports'], price: { basic: 1000, standard: 1500, premium: 3000 }, icon: '📊', color: '#9333EA' },
+  { id: 6, title: 'QR Attendance', category: 'Web App', description: 'Dynamic QR code-based attendance system. New QR every session prevents proxy attendance.', tech: ['Python', 'Django', 'QRCode', 'Bootstrap'], features: ['Dynamic QR codes', 'Anti-proxy system', 'Live dashboard', 'Location tracking'], price: { basic: 999, standard: 1500, premium: 2000 }, icon: '📱', color: '#B45309' },
+  { id: 7, title: 'AI Student Result Analyzer', category: 'AI/ML', description: 'Smart result analysis tool that predicts student performance and gives personalized study suggestions.', tech: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'], features: ['Performance prediction', 'Weak area detection', 'Study suggestions', 'Visual reports'], price: { basic: 1000, standard: 1500, premium: 3000 }, icon: '📊', color: '#9333EA' },
 ];
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = allProjects.find(p => p.id === parseInt(id));
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!project) {
-    return (
-      <div style={{ paddingTop: 120, textAlign: 'center' }}>
-        Project not found.{' '}
-        <Link to="/projects" style={{ color: 'var(--accent2)' }}>Go back</Link>
-      </div>
-    );
-  }
+  useEffect(() => {
+    // First check local defaults
+    const local = allProjects.find(p => p.id === parseInt(id));
+    if (local) {
+      setProject(local);
+      setLoading(false);
+      return;
+    }
+    // Not in defaults — fetch from backend (admin-added project)
+    getProject(id)
+      .then(r => {
+        setProject(r.data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [id]);
 
+  if (loading) return (
+    <div style={{ paddingTop: 120, textAlign: 'center', color: 'var(--muted)' }}>Loading...</div>
+  );
+
+  if (!project) return (
+    <div style={{ paddingTop: 120, textAlign: 'center' }}>
+      Project not found. <Link to="/projects" style={{ color: 'var(--accent2)' }}>Go back</Link>
+    </div>
+  );
   const tiers = [
     {
       name: 'Basic',

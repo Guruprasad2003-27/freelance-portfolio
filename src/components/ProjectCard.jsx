@@ -58,7 +58,7 @@ export default function ProjectCard({ project, delay = 0 }) {
             ₹{project.price.basic.toLocaleString()}
           </div>
         </div>
-        <Link to={`/projects/${project.id}`} style={{
+        <Link to={`/projects/${project.id || project._id}`} style={{
           background: 'var(--accent)', color: '#fff',
           padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600
         }}>View Details →</Link>

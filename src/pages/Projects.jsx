@@ -101,7 +101,7 @@ export default function Projects() {
             <div style={{ textAlign: 'center', color: 'var(--muted)', padding: 80 }}>Loading projects...</div>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))', gap: 24 }}>
-              {filtered.map((p, i) => <ProjectCard key={p.id || p._id || p.name} project={p} delay={i * 80} />)}
+              {filtered.map((p, i) => <ProjectCard key={p.id || p._id} project={p} delay={i * 80} />)}
             </div>
           )}
         </div>
