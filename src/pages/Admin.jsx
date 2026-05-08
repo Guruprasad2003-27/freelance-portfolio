@@ -4,7 +4,7 @@ import { getProjects } from '../api';
 import axios from 'axios';
 
 const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'guru2024admin';
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://freelance-portfolio-backend-api.onrender.com/api';
 
 const emptyForm = {
   title: '',

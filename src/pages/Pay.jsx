@@ -31,7 +31,7 @@ export default function Pay() {
     if (!form.txnId.trim()) return;
     setLoading(true);
     try {
-      await fetch((import.meta.env.VITE_API_URL || 'http://localhost:5000/api') + '/payment/upi-confirm', {
+      await fetch((import.meta.env.VITE_API_URL || 'https://freelance-portfolio-backend-api.onrender.com/api') + '/payment/upi-confirm', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form }),
       });
