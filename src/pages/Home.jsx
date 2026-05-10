@@ -108,7 +108,7 @@ export default function Home() {
               { icon: '📊', label: 'Data Science', desc: 'Analysis, visualization, dashboards' },
               { icon: '📱', label: 'Mobile Apps', desc: 'Android & cross-platform apps' },
               { icon: '🔐', label: 'Security Tools', desc: 'Auth systems, secure platforms' },
-              { icon: '☁️', label: 'Cloud & DevOps', desc: 'Deployment, CI/CD, automation' },
+              
             ].map(d => (
               <div key={d.label} style={{
                 background: 'var(--surface)', border: '1px solid var(--border)',
