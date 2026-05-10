@@ -18,7 +18,6 @@ export default function Navbar() {
     { to: '/', label: 'Home' },
     { to: '/projects', label: 'Projects' },
     { to: '/hire', label: 'Hire Me' },
-    { to: '/pay', label: 'Pay Now' },
   ];
 
   return (
@@ -45,7 +44,7 @@ export default function Navbar() {
                 transition: 'all 0.2s'
               }}>{l.label}</Link>
             ))}
-            <a href="https://wa.me/917530021461" target="_blank" rel="noopener noreferrer" style={{
+            <a href="https://wa.me/916382788045" target="_blank" rel="noopener noreferrer" style={{
               background: '#25D366', color: '#fff', padding: '8px 16px',
               borderRadius: 8, fontSize: 14, fontWeight: 600,
               display: 'flex', alignItems: 'center', gap: 6, marginLeft: 8
@@ -60,7 +59,7 @@ export default function Navbar() {
           }}>{menuOpen ? '✕' : '☰'}</button>
         </div>
 
-        {/* Mobile dropdown */}
+        {/* Mobile menu */}
         {menuOpen && (
           <div style={{ padding: '8px 24px 24px', borderTop: '1px solid var(--border)', background: 'rgba(5,5,8,0.98)' }}>
             {links.map(l => (
@@ -71,7 +70,7 @@ export default function Navbar() {
                 color: location.pathname === l.to ? 'var(--accent2)' : 'var(--text)',
               }}>{l.label}</Link>
             ))}
-            <a href="https://wa.me/917530021461" target="_blank" rel="noopener noreferrer" style={{
+            <a href="https://wa.me/916382788045" target="_blank" rel="noopener noreferrer" style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
               marginTop: 16, background: '#25D366', color: '#fff',
               padding: 14, borderRadius: 10, fontSize: 16, fontWeight: 700
