@@ -22,7 +22,7 @@ export default function Home() {
     { val: '5+', label: 'Domains Covered' },
     { val: '100%', label: 'Student Friendly' },
     { val: 'Custom', label: 'Pricing Always' },
-    { val: 'Assured', label: 'As Per Deadline' },
+    { val: 'Custom Work', label: 'Custom Timeline' },
   ];
 
   return (
