@@ -22,8 +22,7 @@ export default function Home() {
     { val: '5+', label: 'Domains Covered' },
     { val: '100%', label: 'Student Friendly' },
     { val: 'Custom', label: 'Pricing Always' },
-    { val: '48hr', label: 'Avg Delivery' },
-    { val: 'Delivery varies', label: 'For Custom Projects' },
+    { val: 'Assured', label: 'As Per Deadline' },
   ];
 
   return (
